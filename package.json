@@ -1,14 +1,18 @@
 {
 	"name": "weekjs",
-	"version": "1.0.0",
-	"description": "",
+	"version": "1.0.1",
+	"description": "获取当前第几周",
 	"main": "./dist/weekjs.min.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "rollup -c rollup.config.js"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": [
+		"weekjs",
+		"week"
+	],
+	"author": "shiwusong",
+	"repository": "https://github.com/shiwusong/weekjs",
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/cli": "^7.5.0",
