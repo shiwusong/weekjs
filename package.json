@@ -1,0 +1,23 @@
+{
+	"name": "weekjs",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./dist/weekjs.min.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "rollup -c rollup.config.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/cli": "^7.5.0",
+		"@babel/core": "^7.5.4",
+		"@babel/plugin-transform-classes": "^7.4.4",
+		"@babel/preset-env": "^7.5.4",
+		"rollup": "^1.17.0",
+		"rollup-plugin-babel": "^4.3.3",
+		"rollup-plugin-uglify": "^6.0.2"
+	},
+	"dependencies": {}
+}
