@@ -11,7 +11,7 @@ module.exports = {
 		babel({
 			presets: [
 				[
-					'@babel/env',
+					'@babel/preset-env',
 					{
 						modules: false,
 					},
