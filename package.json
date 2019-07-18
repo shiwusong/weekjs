@@ -1,6 +1,6 @@
 {
 	"name": "weekjs",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "获取当前第几周",
 	"main": "./dist/weekjs.min.js",
 	"scripts": {
