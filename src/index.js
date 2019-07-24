@@ -1,4 +1,12 @@
 const WEEK_TIME = 7 * 24 * 60 * 60 * 1000
+
+// 获取23:59:59
+function set235959(d) {
+	const f = new Date(d.getTime())
+	f.setHours(23, 59, 59)
+	return f
+}
+
 // 获取上一个周一
 function gPMD(d = new Date()) {
 	d.setHours(0, 0, 0, 0)
@@ -104,14 +112,15 @@ class Week {
 	}
 	// 获取本周范围
 	getRange(full = false) {
-		return full ? [this.sDF, this.eDF] : [this.sD, this.eD]
+		return full ? [this.sDF, set235959(this.eDF)] : [this.sD, set235959(this.eD)]
 	}
 	// 获取本年范围（强制周一开始周日结束）
 	getYearRange(full = false) {
-		return full ? [this.fYMDF, this.lYSD] : [this.fYMD, this.lYSD]
+		return full ? [this.fYMDF, set235959(this.lYSD)] : [this.fYMD, set235959(this.lYSD)]
 	}
 }
 const weekjs = (...p) => new Week(...p)
 weekjs.getPreMonday = gPMD
 weekjs.getPostSunday = gPSD
+weekjs.set235959 = set235959
 module.exports = weekjs

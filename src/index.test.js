@@ -17,7 +17,7 @@ describe('解析测试', function() {
 			weekjs()
 				.getRange()[1]
 				.getTime(),
-			weekjs.getPostSunday(new Date()).getTime()
+			weekjs.set235959(weekjs.getPostSunday(new Date())).getTime()
 		)
 	})
 
@@ -35,7 +35,7 @@ describe('解析测试', function() {
 			weekjs(d)
 				.getRange()[1]
 				.getTime(),
-			weekjs.getPostSunday(d).getTime()
+			weekjs.set235959(weekjs.getPostSunday(d)).getTime()
 		)
 	})
 
@@ -126,7 +126,7 @@ describe('获取', function() {
 			weekjs(new Date('2019-1-2'))
 				.getRange()[1]
 				.getTime(),
-			new Date('2019-1-6 00:00:00').getTime()
+			weekjs.set235959(new Date('2019-1-6 00:00:00')).getTime()
 		)
 		assert.equal(
 			weekjs(new Date('2018-12-31'))
@@ -138,13 +138,13 @@ describe('获取', function() {
 			weekjs(new Date('2018-12-31'))
 				.getRange()[1]
 				.getTime(),
-			new Date('2018-12-31 00:00:00').getTime()
+			weekjs.set235959(new Date('2018-12-31 00:00:00')).getTime()
 		)
 		assert.equal(
 			weekjs(new Date('2018-12-31'))
 				.getRange(true)[1]
 				.getTime(),
-			new Date('2019-1-6 00:00:00').getTime()
+			weekjs.set235959(new Date('2019-1-6 00:00:00')).getTime()
 		)
 	})
 
@@ -165,13 +165,13 @@ describe('获取', function() {
 			weekjs(new Date('2019-1-1'))
 				.getYearRange()[1]
 				.getTime(),
-			new Date('2020-1-5 00:00:00').getTime()
+			weekjs.set235959(new Date('2020-1-5 00:00:00')).getTime()
 		)
 		assert.equal(
 			weekjs(new Date('2019-1-1'))
 				.getYearRange(true)[1]
 				.getTime(),
-			new Date('2020-1-5 00:00:00').getTime()
+			weekjs.set235959(new Date('2020-1-5 00:00:00')).getTime()
 		)
 	})
 })

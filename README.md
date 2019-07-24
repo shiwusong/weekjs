@@ -2,7 +2,7 @@
 
 周日期函数，提供对周的一系列操作
 
--   Gzip only 1.08KB
+-   Gzip only 1.12KB
 -   100% test coverage
 
 安装  
@@ -33,8 +33,8 @@ weekjs(new Date('2019-1-1')).getWeekCount(true) // 52
 
 // 获取当年第一个周一和最后一个周日
 // 返回一个Date数组
-weekjs(2019, 1).getYearRange() // [ 2018-12-30T16:00:00.000Z, 2020-01-04T16:00:00.000Z ]
-weekjs(2019, 1).getYearRange(true) // [ 2019-1-6T16:00:00.000Z, 2020-01-04T16:00:00.000Z ]
+weekjs(2019, 1).getYearRange() // [ 2018-12-31 00:00:00, 2020-01-06 23:59:59 ]
+weekjs(2019, 1).getYearRange(true) // [ 2019-1-7 00:00:00, 2020-01-13 23:59:59 ]
 
 // 获取指定时间前一个周一
 Weekjs.getPreMonday(new Date())
@@ -49,7 +49,7 @@ Weekjs.getPostSunDay(new Date())
 -   返回一个 Date 数组
 
 ```js
-weekjs(new Date('2019-1-1')).getRange() //[ 2019-1-1, 2019-1-6 ]
+weekjs(new Date('2019-1-1')).getRange() //[ 2019-1-1 00:00:00, 2019-1-6 23:59:59]
 ```
 
 ![](./assets/2.png)
@@ -57,7 +57,7 @@ weekjs(new Date('2019-1-1')).getRange() //[ 2019-1-1, 2019-1-6 ]
 ---
 
 ```js
-weekjs(new Date('2019-1-1')).getRange(true) //[ 2018-12-31, 2019-1-6 ]
+weekjs(new Date('2019-1-1')).getRange(true) //[ 2018-12-31 00:00:00, 2019-1-6 23:59:59 ]
 ```
 
 ![](./assets/3.png)
