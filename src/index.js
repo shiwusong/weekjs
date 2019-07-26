@@ -98,13 +98,18 @@ class Week {
 		return Math.round((this.sDF.getTime() - (full ? this.fYMDF : this.fYMD).getTime()) / WEEK_TIME) + 1
 	}
 	// 获取当月第几周
-	getWeekOfMonthYear(full = false, month = this.month + 1, year = this.year) {
-		const firstMonthDay = new Date(`${year}-${month}-1 00:00:00`)
+	getWeekOfMonth(full = false) {
+		const firstMonthDay = new Date(`${this.year}-${this.month + 1}-1 00:00:00`)
 		const firstMonthMonday = gPMD(firstMonthDay)
 		full &&
 			firstMonthMonday.getTime() < firstMonthDay.getTime() &&
 			firstMonthMonday.setDate(firstMonthMonday.getDate() + 7)
-		return Math.round((this.sDF.getTime() - firstMonthMonday.getTime()) / WEEK_TIME) + 1
+		let week = Math.round((this.sDF.getTime() - firstMonthMonday.getTime()) / WEEK_TIME) + 1
+		if (!week) {
+			firstMonthDay.setDate(0)
+			return weekjs(firstMonthDay).getWeekOfMonth(full)
+		}
+		return week
 	}
 	// 获取当年共几周
 	getWeekCount(full = false) {

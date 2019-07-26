@@ -89,17 +89,12 @@ describe('获取', function() {
 	})
 
 	it('获取当月周数', function() {
-		assert.equal(weekjs(new Date('2019-1-1')).getWeekOfMonthYear(), 1)
-		assert.equal(weekjs(new Date('2019-1-1')).getWeekOfMonthYear(true), 0)
-		assert.equal(weekjs(new Date('2019-1-21')).getWeekOfMonthYear(), 4)
-		assert.equal(weekjs(new Date('2019-1-21')).getWeekOfMonthYear(true), 3)
-		assert.equal(weekjs(new Date('2019-2-1')).getWeekOfMonthYear(false, 1), 5)
-		assert.equal(weekjs(new Date('2019-2-1')).getWeekOfMonthYear(true, 1), 4)
-		assert.equal(weekjs(new Date('2019-2-28')).getWeekOfMonthYear(false, 1), 9)
-		assert.equal(weekjs(new Date('2019-2-28')).getWeekOfMonthYear(true, 1), 8)
-		assert.equal(weekjs(new Date('2019-2-28')).getWeekOfMonthYear(false, 1, 2018), 9 + 53 - 1)
-		assert.equal(weekjs(new Date('2019-2-28')).getWeekOfMonthYear(true, 1, 2018), 9 + 53 - 1)
-		assert.equal(weekjs(new Date('2019-2-28')).getWeekOfMonthYear(true, 1, 2017), 9 + 53 - 1 + 52)
+		assert.equal(weekjs(new Date('2019-1-1')).getWeekOfMonth(), 1)
+		assert.equal(weekjs(new Date('2019-1-1')).getWeekOfMonth(true), 5)
+		assert.equal(weekjs(new Date('2019-4-1')).getWeekOfMonth(true), 1)
+		assert.equal(weekjs(new Date('2019-5-1')).getWeekOfMonth(true), 5)
+		assert.equal(weekjs(new Date('2019-1-21')).getWeekOfMonth(), 4)
+		assert.equal(weekjs(new Date('2019-1-21')).getWeekOfMonth(true), 3)
 	})
 
 	it('获取当年总周数', function() {
