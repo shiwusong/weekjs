@@ -34,17 +34,17 @@ class Week {
 		this.year = _d.getFullYear()
 		this.month = _d.getMonth()
 		// 年第一天 firstYearDay
-		this.fYD = new Date(`${this.year}-1-1 00:00:00`)
+		this.fYD = new Date(`${this.year}/1/1 00:00:00`)
 		// 年最后一天 lastYearDay
-		this.lYD = new Date(`${this.year}-12-31 00:00:00`)
+		this.lYD = new Date(`${this.year}/12/31 00:00:00`)
 		// 当前周的周一（当前周的第一天，整周模式） startDayFull
 		this.sDF = gPMD(_d)
 		// 当前周第一天 startDay
-		this.sD = this.sDF.getTime() < this.fYD.getTime() ? new Date(`${this.year}-1-1 00:00:00`) : this.sDF
+		this.sD = this.sDF.getTime() < this.fYD.getTime() ? new Date(`${this.year}/1/1 00:00:00`) : this.sDF
 		// 当前周的周日 (当前周的最后一天 整周模式) endDayFull
 		this.eDF = gPSD(_d)
 		// 当前周最后一天 endDay
-		this.eD = this.eDF.getTime() > this.lYD.getTime() ? new Date(`${this.year}-12-31 00:00:00`) : this.eDF
+		this.eD = this.eDF.getTime() > this.lYD.getTime() ? new Date(`${this.year}/12/31 00:00:00`) : this.eDF
 		// 当年第一个周一 firstYearMonday
 		this.fYMD = gPMD(this.fYD)
 		// 当年第一个整周周一 firstYearMondayFull
@@ -70,7 +70,7 @@ class Week {
 				return new Week(new Date().getFullYear(), ...params)
 			}
 		} else {
-			const d = new Date(`${parseInt(params[0])}-1-1 00:00:00`)
+			const d = new Date(`${parseInt(params[0])}/1/1 00:00:00`)
 			d.setDate(d.getDate() + parseInt(params[1]) * 7 - 7)
 			return this._c(d)
 		}
@@ -99,7 +99,7 @@ class Week {
 	}
 	// 获取当月第几周
 	getWeekOfMonth(full = false) {
-		const firstMonthDay = new Date(`${this.year}-${this.month + 1}-1 00:00:00`)
+		const firstMonthDay = new Date(`${this.year}/${this.month + 1}/1 00:00:00`)
 		const firstMonthMonday = gPMD(firstMonthDay)
 		full &&
 			firstMonthMonday.getTime() < firstMonthDay.getTime() &&
